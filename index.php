@@ -4,7 +4,7 @@ initSession();
 
 // Redirect if already logged in
 if (isLoggedIn()) {
-    header('Location: dashboard.php');
+    header('Location: ' . APP_URL . '/dashboard.php');
     exit;
 }
 
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign In — ClaimsPro</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="<?= APP_URL ?>/css/style.css">
 </head>
 <body>
 <div class="auth-page">
@@ -84,13 +84,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       <div class="flex align-center gap-8 mb-24" style="justify-content:space-between;">
         <label class="flex align-center gap-8 text-sm" style="cursor:pointer;">
-         <a href="register.php" class="text-sm text-silver">I don't have an account</a> 
+          <a href="register.php" class="text-sm text-gold">Don't have an account</a>
         </label>
         <a href="#" class="text-sm text-gold">Forgot password?</a>
       </div>
 
       <button type="submit" class="btn btn-gold btn-full btn-lg">Sign In</button>
     </form>
+    </div>
   </div>
 </div>
 </body>
