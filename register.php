@@ -43,7 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ");
 
             if ($stmt->execute([$name, $email, $hashedPassword])) {
-                $success = 'Account created successfully. You can now login.';
+                // $success = 'Account created successfully. You can now login.';
+                header('Location: ' . APP_URL . '/index.php');
             } else {
                 $error = 'Something went wrong. Try again.';
             }
@@ -57,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register — ClaimsPro</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="<?= APP_URL ?>/css/style.css">
 </head>
 <body>
 <div class="auth-page">
